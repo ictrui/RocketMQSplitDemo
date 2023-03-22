@@ -73,7 +73,7 @@ public class RocketMQProducer {
 
             producer.setSendMsgTimeout(100000);
 
-            int numberOfThreads = 4;
+            int numberOfThreads = 1;
             ExecutorService executorService = Executors.newFixedThreadPool(numberOfThreads);
 
             for (Message chunk : messageChunks) {
