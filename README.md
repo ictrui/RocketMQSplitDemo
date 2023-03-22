@@ -10,18 +10,14 @@
 
 1. 读取数据库文件到**input.txt**
 
-   ```
-   进入
-   ```
 
-   `org/example/producer/ExportToTextFile.java` 修改数据库配置后执行输出
+
+   进入`org/example/producer/ExportToTextFile.java` 修改数据库配置后执行输出
 2. **开启生产者**
 
-   ```
-   启动
-   ```
 
-   `org/example/RocketMQConsumer.java`,修改其main函数配置
+
+   启动`org/example/RocketMQConsumer.java`,修改其main函数配置
 
    ```java
    RocketMQConsumer consumer = new RocketMQConsumer("consumerGroup", "172.16.2.74:9876", "DemoTopic2", "*", "src" +
@@ -30,11 +26,10 @@
    ```
 3. **开启消费者**
 
-   ```
-   启动
-   ```
+   
 
-   `org/example/RocketMQProducer.java`,修改其main函数配置,读取数据
+
+   启动`org/example/RocketMQProducer.java`,修改其main函数配置,读取数据
 
    ```java
    RocketMQProducer producer = new RocketMQProducer("producerGroup", "172.16.2.74:9876", "input.txt", "DemoTopic2", "DemoTag");
@@ -44,12 +39,11 @@
 
 ## 测试
 
-```
-```
 
-**文件大小：17M**
 
-###### 多线程生产者 (Thread = 4)：
+测试文件大小：17M
+
+##### 多线程生产者 (Thread = 4)：
 
 ```
 时间:11s
@@ -58,10 +52,9 @@
 
 ![image-20230322201617501](http://typora-pc.oss-cn-hangzhou.aliyuncs.com/img/image-20230322201617501.png)
 
-```
-```
+
 
 **单线程生产者** ：
 
-				    时间:   13724ms
+     时间:   13724ms
 ![image-20230322201806008](http://typora-pc.oss-cn-hangzhou.aliyuncs.com/img/image-20230322201806008.png)
